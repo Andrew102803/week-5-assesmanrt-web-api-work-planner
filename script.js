@@ -86,3 +86,29 @@ Plannermain.forEach(function (hour) {
   var importantdata = $("<textarea>");
   importantdata.attr("id", hour.id);
 //why tho
+//colors baby, thatss right makes da time the colro code correct omg 
+  if (hour.time == moment().format("HH")) {
+    importantdata.addClass("present");
+    //hours aghhhhhhhhhhhhhhhhhhh
+  } else if (hour.time < moment().format("HH")) {
+    //we live in a past society
+    importantdata.addClass("past");
+  } else if (hour.time > moment().format("HH")) {
+    //the future do be wildin
+    importantdata.addClass("future");
+  }
+  inputtime.append(importantdata);
+//https://youtu.be/UvEzFW_pH1g
+  // make da save button
+  //i should start writin in german
+  //Mann, das ist Schmerz
+  //es macht irgendwie Spaß
+  //ok ill stop
+  //maybe...
+  var savething = $("<i class='far fa-save fa-lg'></i>");
+  var donesaving = $("<button>").addClass("col-md-1 saveBtn");
+
+  //puts the elements on the row
+  donesaving.append(savething);
+  tRow.append(signthingy, inputtime, donesaving);
+});
