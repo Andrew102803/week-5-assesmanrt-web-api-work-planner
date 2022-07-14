@@ -112,3 +112,35 @@ Plannermain.forEach(function (hour) {
   donesaving.append(savething);
   tRow.append(signthingy, inputtime, donesaving);
 });
+//save button functions appropriately
+$(".saveBtn").on("click", function (event) {
+  event.preventDefault();
+  //saving information into array
+  var saveIndex = $(this).siblings(".description").children().attr("id");
+  Plannermain[saveIndex].dataPlanner = $(this)
+    .siblings(".description")
+    .children()
+    .val();
+//opium war was cool
+  storePlannerData();
+  plannerDataDisplay();
+});
+//i just wanna play hoi4
+//makes the dat show
+currentDate();
+//does the thing it says dummy
+//no seiosuly you have no brain
+//stop
+dataLoader();
+
+writeRandomQuote = function () {
+    var quotes = new Array();
+    quotes[0] = "Action is the real measure of intelligence.";
+    quotes[1] = "Baseball has the great advantage over cricket of being sooner ended.";
+    quotes[2] = "Every goal, every action, every thought, every feeling one experiences, whether it be consciously or unconsciously known, is an attempt to increase one's level of peace of mind.";
+    quotes[3] = "A good head and a good heart are always a formidable combination.";
+    var rand = Math.floor(Math.random()*quotes.length);
+    document.write(quotes[rand]);
+  }
+  writeRandomQuote();
+  //added a fun
