@@ -1,6 +1,17 @@
-
 //start the thing
 var Plannermain = [];
+
+//<-- 
+   window.status = "why arew we still here just to suffer"; 
+// --> 
+
+function showDate() {
+    var d = new Date();
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth() + 1; //months are zero based
+    var curr_year = d.getFullYear();
+    document.write(curr_date + "-" + curr_month + "-" + curr_year);
+  }
 
 //makes it loop and makes the actual ray thingy
 for (time = 9; time <= 17; time++) {
@@ -40,10 +51,4 @@ function currentDate() {
 //save on computer, what it says its very basic, why are you still reading this im not even funny no seriosuly atop 
 function storePlannerData() {
   localStorage.setItem("dayPlanner", JSON.stringify(Plannermain));
-}
-//displays your stuff from local
-function plannerDataDisplay() {
-  Plannermain.forEach(function (hour) {
-    $("#" + hour.id).val(hour.dataPlanner);
-  });
 }
