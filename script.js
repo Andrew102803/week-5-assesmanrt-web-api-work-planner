@@ -52,3 +52,37 @@ function currentDate() {
 function storePlannerData() {
   localStorage.setItem("dayPlanner", JSON.stringify(Plannermain));
 }
+//displays your stuff from local
+function plannerDataDisplay() {
+  Plannermain.forEach(function (hour) {
+    $("#" + hour.id).val(hour.dataPlanner);
+  });
+}
+
+//does stuff with your data, look man the function right below describes it it litersally loads your data stop reading my comments
+function dataLoader() {
+    //yyyyyyyyeeeeeeeaaaahhhh baby new variabke woooooooooooooooooooooooooooooo
+  var loaddata = JSON.parse(localStorage.getItem("dayPlanner"));
+  if (loaddata) {
+    Plannermain = loaddata;
+    //3rd nose bleed
+  }
+  storePlannerData();
+  plannerDataDisplay();
+}
+//omg it make da thing check the hour
+Plannermain.forEach(function (hour) {
+  var tRow = $("<form>");
+  tRow.addClass("row");
+  $(".container").append(tRow);
+//https://youtu.be/VbmjkLBybvk
+  var signthingy = $("<div>");
+  signthingy.addClass("col-md-2 hour");
+  signthingy.text(hour.hourthingy + hour.afternoonormorning);
+//evrry second i spend here i deterioate
+  var inputtime = $("<div>");
+  inputtime.addClass("col-md-9 description p-0");
+//aghhhhhhhhhhhhhhhhhhhh
+  var importantdata = $("<textarea>");
+  importantdata.attr("id", hour.id);
+//why tho
